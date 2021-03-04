@@ -1,19 +1,20 @@
-var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer 7igUs13Ah6-2tSlLzSD4_-UAnPo");
-myHeaders.append("Cookie", "BrowserId=o5tw85btEeq_EY96rL1b9w");
+var btn = document.querySelector('.btn');
+var ul = document.querySelector('ul');
 
-var raw = "";
+function buscaPerfil() {
 
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
+  var input = document.querySelector('input').value;
+  var li = document.createElement('li');
+  console.log(input, '235');
+  axios.get(`https://api.github.com/users/${input}`)
 
-fetch("https://zzrw-001.sandbox.us01.dx.commercecloud.salesforce.com/s/-/dw/data/v20_4/products/produto-api-tres", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+    .then((resultado) => {
+      console.log(resultado, 'dentro');
 
-console.log("carregando da 001");
+    }).catch((erro) => {
+      console.log(erro);
+      console.log('erro');
+    });
+}
+
+btn.onclick = buscaPerfil;
