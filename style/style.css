@@ -1,0 +1,13 @@
+body{
+    background: rgb(216, 241, 233);
+    display: flex;
+    justify-content: center;
+
+
+}
+body .texto{
+    font-family: monospace;
+    font-size: large;
+    
+    
+}
